@@ -8,13 +8,82 @@ var evening = 18;
 // Getting it to show the current time on the page
 var showCurrentTime = function()
 {
+    // Hent id til clock-element
+    const clock = document.getElementById('clock');
 
+    // Legg inn tiden
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+
+    // Legger på 0 hvis ikke to siffer
+    if (hours < 10)
+    {
+        hours = "0" + hours;
+    }
+
+    if (minutes < 10)
+    {
+        minutes = "0" + minutes;
+    }
+
+    if (seconds < 10)
+    {
+        seconds = "0" + seconds;
+    }
+
+    clock.innerText = hours + ":" + minutes + ":" + seconds;
 };
 
 // Getting the clock to increment on its own and change out messages and pictures
 var updateClock = function() 
 {
+    var time = new Date().getHours();
+    var messageText;
+    var image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
 
+    var timeEventJS = document.getElementById("timeEvent");
+    var lolcatImageJS = document.getElementById('lolcatImage');
+
+    if (time == partytime)
+    {
+        messageText = "Let's party";
+        image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
+    }
+    else if (time == wakeuptime)
+    {
+        messageText = "Wake up!";
+        image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
+    }
+    else if (time == lunchtime)
+    {
+        messageText = "Lunch time";
+        image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg";
+    }
+    else if (time == naptime)
+    {
+        messageText = "Time for a nap";
+        image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg";
+    }
+    else if (time < noon)
+    {
+        messageText = "Good morning"
+    }
+    else if (time >= evening)
+    {
+        messageText = "Good evening"
+    }
+    else
+    {
+        messageText = "Good afternoon"
+    }
+
+    timeEventJS.innerText = messageText;
+    lolcatImageJS.src = image;
+    console.log(messageText)
+
+    showCurrentTime();
 };
 
 updateClock();
@@ -29,7 +98,18 @@ var partyButton = document.getElementById("partyTimeButton");
 
 var partyEvent = function()
 {
-
+    if (partytime < 0) 
+    {
+        partytime = new Date().getHours();
+        partyTimeButton.innerText = "Party Over!";
+        partyTimeButton.style.backgroundColor = "#0A8DAB";
+    }
+    else
+    {
+        partytime = -1;
+        partyTimeButton.innerText = "Party Time!";
+        partyTimeButton.style.backgroundColor = "#222";
+    }
 };
 
 partyButton.addEventListener("click", partyEvent);
