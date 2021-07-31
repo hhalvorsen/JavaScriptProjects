@@ -41,7 +41,7 @@ var updateClock = function()
 {
     var time = new Date().getHours();
     var messageText;
-    var image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
+    var image = "Ronja Generell.jpg";
 
     var timeEventJS = document.getElementById("timeEvent");
     var lolcatImageJS = document.getElementById('lolcatImage');
@@ -49,22 +49,22 @@ var updateClock = function()
     if (time == partytime)
     {
         messageText = "Let's party";
-        image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
+        image = "Ronja Party.jpg";
     }
     else if (time == wakeuptime)
     {
         messageText = "Wake up!";
-        image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat1.jpg";
+        image = "Ronja Wake Up.jpg";
     }
     else if (time == lunchtime)
     {
-        messageText = "Lunch time";
-        image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg";
+        messageText = "Hike time";
+        image = "Ronja Tur.jpg";
     }
     else if (time == naptime)
     {
         messageText = "Time for a nap";
-        image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg";
+        image = "Ronja Sleep.jpg";
     }
     else if (time < noon)
     {
