@@ -1,1 +1,1 @@
-"JavaScript-klokke, nybegynnerprosjekt" 
+JavaScript-klokke, nybegynnerprosjekt
