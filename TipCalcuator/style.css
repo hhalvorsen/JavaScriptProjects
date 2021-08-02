@@ -1,3 +1,58 @@
+:root {
+    --general-border-radius: 0.5cm;
+  }
+
+body {
+    background-color: #faebd7;
+}
+#container {
+    background-color: darkgray;
+    border-color: black;
+    border-width: 8pt;
+    border-radius: var(--general-border-radius);
+    -webkit-border-radius: var(--general-border-radius);
+    -moz-border-radius: var(--general-border-radius);
+    height: 300pt;
+    width: 230pt;
+    margin: 100px auto;
+}
+
+#container * {
+    text-align: center;
+    font-family: Helvetica, Verdana, sans-serif;
+}
+
+#container * :not(h1), #calculate {
+    font-size: 12pt;
+}
+
+h1 {
+    background-color: darkorange;
+    border-top-right-radius: var(--general-border-radius);
+    border-top-left-radius: var(--general-border-radius);
+    text-align: center;
+    font-size: 20pt;
+    padding: 5pt;
+}
+
+
+#billamt, #serviceQual, #peopleamt, #calculate {
+    border-radius: 5pt;
+    padding-top: 5pt;
+    padding-bottom: 5pt;
+    background-color: white;
+    border-style: hidden;
+}
+
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3pt 5pt;
+}
+
 #totalTip {
     visibility: hidden;
+    font-weight: bold;
+    margin: 10pt;
 }
