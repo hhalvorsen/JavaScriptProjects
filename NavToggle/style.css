@@ -10,3 +10,15 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.nav-list ul{
+    opacity: 0;
+    z-index: 2000;
+    position: absolute;
+    top: -30%;
+    left: 50%;
+}
+
+.active {
+    color: brown;
+}
