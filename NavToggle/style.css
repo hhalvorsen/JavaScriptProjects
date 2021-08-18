@@ -1,5 +1,9 @@
 body {
-    background-color: #00ffff;
+    background-color: #3a91c4;
+}
+
+body *{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .top-bar {
@@ -13,12 +17,21 @@ body {
 
 .nav-list ul{
     opacity: 0;
-    z-index: 2000;
     position: absolute;
-    top: -30%;
+    top: 30%;
     left: 50%;
+    z-index: 2000;
 }
 
-.active {
-    color: brown;
+.nav-list.active ul{
+    opacity: 1;
 }
+
+.main-content {
+    opacity: 0;
+}
+
+.main-content.active {
+    opacity: 1;
+}
+
